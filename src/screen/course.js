@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native'
-import React from 'react'
+import React from 'react';
 import Courses from '../api/Course'
 import { TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 import { NavigationContainer } from '@react-navigation/native'
 
+
 const Course = () => {
+    const navigation = useNavigation();
     const courseCard = ({ item }) => {
         return <View style={styles.mainContainer}>
             <View style={styles.CourseContainer}>
@@ -15,13 +18,18 @@ const Course = () => {
                 <Text style={styles.MainDescription}>{item.description}</Text>
                 <View style={styles.ButtonContainer}>
                     <TouchableOpacity style={styles.button}
-                        onPress={() => navigation.navigate("courseDetails")}>
+                        onPress={() =>
+                            navigation.navigate("CourseDetails", {
+                                courseId: item.id,
+                            })
+                        }>
                         <Text>Course Details</Text>
                     </TouchableOpacity>
                 </View>
             </View>
         </View>
     }
+
     return <FlatList
         data={Courses}
         renderItem={courseCard}

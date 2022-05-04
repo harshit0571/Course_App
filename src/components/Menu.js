@@ -13,7 +13,7 @@ export default function Menu() {
                     source={{ uri: "https://img.icons8.com/bubbles/344/view-file.png" }} />
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => navigation.navigate('Contact')}>
+            <TouchableOpacity onPress={() => navigation.navigate('UserData')}>
                 <Image
                     style={styles.Icons}
                     source={{ uri: "https://img.icons8.com/external-itim2101-flat-itim2101/344/external-contact-us-contact-and-message-itim2101-flat-itim2101-2.png" }} />

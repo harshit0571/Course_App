@@ -7,6 +7,7 @@ import About from './src/screen/about';
 import Contact from './src/screen/contact';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import CourseDetails from './src/screen/coursedetails';
 
 
 
@@ -23,6 +24,7 @@ export default function App() {
       <Stack.Screen name="About" component={About} />
       <Stack.Screen name="Contact" component={Contact} />
       <Stack.Screen name="UserData" component={UserData} />
+      <Stack.Screen name="CourseDetails" component={CourseDetails} />
 
     </Stack.Navigator>
   </NavigationContainer>;
